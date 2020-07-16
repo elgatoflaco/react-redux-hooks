@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import * as actions from "./_actions/counter.action";
+import * as actions from "./_actions/action.counter";
 
 const styles = {
   container: {
@@ -10,7 +10,10 @@ const styles = {
 };
 
 const App = () => {
-  const count = useSelector((store) => store.count);
+  const count = useSelector((store) => store.counter.count);
+  const tienda = useSelector((store) => store);
+  console.log(count)
+  console.log(tienda)
   const dispatch = useDispatch();
   return (
     <div style={styles.container}>
